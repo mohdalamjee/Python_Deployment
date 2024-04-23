@@ -30,4 +30,6 @@ df['Cluster'] = y_means
 
 # Save the CSV file in the same directory
 output_file = os.path.join(script_dir, 'final_report.csv')
+print("Saving CSV file to:", output_file)  # Debug output
 df.to_csv(output_file, index=False)
+print("CSV file saved successfully")  # Debug output
