@@ -2,9 +2,13 @@ import numpy as np
 import pandas as pd
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
+import os  # Import the os module to handle file paths
 
-# create a data-frame 
-df = pd.read_excel('Vix historical data.xlsx')
+# Get the directory of the script
+script_dir = os.path.dirname(os.path.realpath(__file__))
+
+# Create a data-frame
+df = pd.read_excel(os.path.join(script_dir, 'Vix historical data.xlsx'))
 
 numeric_data = df[['Open ', 'Close ']]
 
@@ -24,4 +28,6 @@ y_means = km.fit_predict(X)
 
 df['Cluster'] = y_means
 
-df.to_csv('final_report.csv', index=False)
+# Save the CSV file in the same directory
+output_file = os.path.join(script_dir, 'final_report.csv')
+df.to_csv(output_file, index=False)
