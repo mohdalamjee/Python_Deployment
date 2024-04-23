@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pandas numpy scikit-learn
+          pip install pandas numpy scikit-learn openpyxl
 
       - name: Run Python script
         run: python script.py
