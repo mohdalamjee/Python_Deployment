@@ -24,4 +24,4 @@ jobs:
 
       - name: Run Python script
         working-directory: ${{ github.workspace }}
-        run: python script.py > output.log 2>&1
+        run: python script.py > ${{ github.workspace }}/output.log 2>&1
